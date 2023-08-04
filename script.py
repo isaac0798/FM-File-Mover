@@ -24,7 +24,8 @@ for root, dirs, files in os.walk(path):
                     print(path + dir + '/' + file)
                     print(os.path.exists(path + dir + '/' + file))
                     print(dest + dir + '/' + file)
-                    print(os.path.exists(dest + dir + '/' + file))
+                    if os.path.exists(dest + dir + '/') == False:
+                        os.makedirs(dest + dir + '/')
                     shutil.move(path + dir + '/' + file, dest + dir + '/' + file)
 
 
